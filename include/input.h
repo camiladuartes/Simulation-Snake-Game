@@ -1,15 +1,9 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include <iostream> // std::cin, std::cout
-#include <string> // std::string
-#include <fstream>
-#include <utility> // std::pair
-#include <vector>
+#include <string>
 
-using namespace std;
-
-namespace Snake{
+namespace Snaze{
 
     /// Receives the name of the file by the terminal
     class Input{

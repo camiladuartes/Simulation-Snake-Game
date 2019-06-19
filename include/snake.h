@@ -1,48 +1,124 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
-#include <iostream> // std::cin, std::cout
-#include <string> // std::string
-#include <fstream>
-#include <utility> // std::pair
-#include <vector>
+#include "snapshot.h"
+#include <list>
+#include <iostream>
 
-using namespace std;
-
-namespace Snake{
-    /// Represents the snake and its attributes
+namespace Snaze{
+    //! Represents the snake and its attributes
     class Snake{
         private:
-            size_t amount_lives; //!< Stores the amount of life of the snake
-            size_t lenght; //!< Stores the snake lenght.
+
+            std::pair<int,int> spawn;
+            int head_x;
+            int head_y;
+
+            int lifes; //!< Stores the amount of life of the snake
+            Directions direction;
+
+
+            
+
         public:
-            /// Constructor
-            Snake()
-            : amount_lives(5){
-
+            std::list< std::pair<int,int> > body;
+            //! Constructor
+            Snake(int x = 0, int y = 0, Directions d=UP )
+            : lifes(5)
+            {
+                spawn.first = head_x = x;
+                spawn.second = head_y = y;
+                direction = d;
             }
-            /*!
-            @return The amount_lives attibute.
-            */
-            size_t get_amount_lives(){
-                return this->amount_lives;
-            };
 
-            /*!
-            @return The lenght attibute.
-            */
-            size_t get_lenght(){
-                return this->lenght;
-            };
-        //=== Updates the data attributes.
-            /// Updates the amount of lives.
-            size_t update_amount_lives(size_t amt_liv){
-                this->amount_lives = amt_liv;
-            };
-            /// Updates de snake lenght
-            size_t update_lenght(size_t lgt){
-                this->lenght = lgt;
+            void set_snake_pos( int x, int y )
+            {
+                spawn = std::make_pair( x, y );
+                head_x = x;
+                head_y = y;
             }
+
+            //!
+            int get_amount_lives()const { return lifes; }
+            
+            //!
+            void death()
+            { 
+                lifes--;
+                head_x = spawn.first;
+                head_y = spawn.second;
+                if( not body.empty() )
+                    body.clear();
+            }
+
+            //! 
+            void grow()
+            {
+                body.push_front( std::make_pair( head_x, head_y) );
+            }
+
+            //!
+            void shrink()
+            {
+                body.clear();
+            }
+
+            //!
+            void move( Directions d )
+            {
+                direction = d;
+                if( direction == UP )
+                {
+                    if( not body.empty() )
+                    {
+                        body.pop_back();
+                        body.push_front( std::make_pair(head_x, head_y) );
+                    }
+                    head_x--;
+                }
+                else if( direction == DOWN )
+                {
+                    if( not body.empty() )
+                    {
+                        body.pop_back();
+                        body.push_front( std::make_pair(head_x, head_y) );
+                    }
+                    head_x++;
+                }
+                else if( direction == LEFT )
+                {
+                    if( not body.empty() )
+                    {
+                        body.pop_back();
+                        body.push_front( std::make_pair(head_x, head_y) );
+                    }
+                    head_y--;
+                }
+                else
+                {
+                    if( not body.empty() )
+                    {
+                        body.pop_back();
+                        body.push_front( std::make_pair(head_x, head_y) );
+                    }
+                    head_y++;
+                }
+            }
+
+            //!
+            Directions current_direction()const { return direction; }
+
+            //!
+            std::pair<int,int> get_head()
+            {
+                return std::make_pair( head_x, head_y );
+            }
+
+            //!
+            //std::list< std::pair<int,int> > get_body()const { return body; }
+
+     
+
     };
-}
+}//namespace
 #endif
