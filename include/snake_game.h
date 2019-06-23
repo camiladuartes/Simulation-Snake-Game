@@ -86,6 +86,7 @@ namespace Snaze{
             //!
             void update()
             {   
+                score += 3*snake.body.size() + 3;
                 if( level.wall( snake.get_head(), snake ) )
                 {
                     snake.death();

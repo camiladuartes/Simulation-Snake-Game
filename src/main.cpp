@@ -13,12 +13,6 @@ int main (int argc, char *argv[]){
         game.update();
         game.render();
         std::this_thread::sleep_for(std::chrono::milliseconds( game.snake_speed() ));
-
-        //game.force_victory();
-    //     game.render();
     }
-
-    std::cout << " THE END " << std::endl;
-
     return 0;
 }

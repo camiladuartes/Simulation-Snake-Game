@@ -35,8 +35,11 @@ namespace Snaze{
     		//! looking for a way to food, if find, returns true, false otherwise.
         	bool find_solution( char** maze, std::pair<int,int> apple, int down_limit, int right_limit, std::pair<int,int> current_position, Snake snake )
         	{
+        		food_way_directions.clear();
+        		ghost_snake.shrink();
         		ghost_snake.set_snake_pos( current_position.first, current_position.second );
-        		ghost_snake.body = snake.body;
+        		if( not snake.body.empty() )
+        			ghost_snake.body = snake.body;
         		std::stack< std::pair< int,int > > lost_tails;
 
 
