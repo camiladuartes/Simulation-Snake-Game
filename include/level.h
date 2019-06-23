@@ -141,7 +141,6 @@ namespace Snaze{
                         if( snake.get_head().first == i and snake.get_head().second == j )
                         {
                             if( snake.current_direction() == UP )
-<<<<<<< HEAD
                                 std::cout << "\033[1;36m▴\033[0m";
                             else if( snake.current_direction() == DOWN )
                                 std::cout << "\033[1;36m▾\033[0m";
@@ -149,15 +148,6 @@ namespace Snaze{
                                 std::cout << "\033[1;36m◂\033[0m";
                             else 
                                 std::cout << "\033[1;36m▸\033[0m";
-=======
-                                std::cout << "V";
-                            else if( snake.current_direction() == DOWN )
-                                std::cout << "A";
-                            else if( snake.current_direction() == LEFT )
-                                std::cout << ">";
-                            else 
-                                std::cout << "<";
->>>>>>> 47b3168bd2c4a571b393a0bf49ec104e27419595
                             continue;
                         }
                         else
@@ -168,11 +158,7 @@ namespace Snaze{
                                 {
                                     if( it->first == i and it->second == j )
                                     {
-<<<<<<< HEAD
                                         std::cout << "\033[1;36m⬧\033[0m";
-=======
-                                        std::cout << "o";
->>>>>>> 47b3168bd2c4a571b393a0bf49ec104e27419595
                                         jump = true;
                                         break;
                                     }
@@ -183,23 +169,12 @@ namespace Snaze{
                         {
                             if( apple_location.first == i and apple_location.second == j )
                             {
-<<<<<<< HEAD
                                 std::cout << "\033[31m▪\033[0;0m";
-=======
-                                std::cout << "X";
->>>>>>> 47b3168bd2c4a571b393a0bf49ec104e27419595
                             }
                             else if(mazes_vector[current_level][i][j] == '#'){
                                 std::cout << "\033[1;32m▯\033[0m";
                             }
-<<<<<<< HEAD
                             else if(mazes_vector[current_level][i][j] == '.' || mazes_vector[current_level][i][j] == ' ' || mazes_vector[current_level][i][j] == '*'){
-=======
-                            else if(mazes_vector[current_level][i][j] == '*'){
-                                std::cout << "\033[31m▪\033[0;0m";
-                            }
-                            else if(mazes_vector[current_level][i][j] == '.' || mazes_vector[current_level][i][j] == ' '){
->>>>>>> 47b3168bd2c4a571b393a0bf49ec104e27419595
                                 std::cout << " ";
                             }
                         }
