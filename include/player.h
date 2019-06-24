@@ -68,21 +68,6 @@ namespace Snaze{
 						}
 
 					}
-					else if( go_left( current_position, maze ) and not(album[ photo.getPoseLeft() ] == photo.new_pose(LEFT) ) and previous_move != RIGHT )
-					{
-						previous_move = LEFT;
-					
-						album[ photo.getKey() ] = photo;
-						current_position.second--;
-
-						way.push( current_position );
-						food_way_directions.push_back( LEFT );
-						if( not ghost_snake.body.empty() )
-						{
-							lost_tails.push( ghost_snake.body.back() );
-							ghost_snake.move( LEFT );
-						}
-					}
 					else if( go_down( current_position, maze, down_limit ) and not(album[ photo.getPoseDown() ] == photo.new_pose(DOWN) ) and previous_move != UP )
 					{
 						previous_move = DOWN;
@@ -96,6 +81,21 @@ namespace Snaze{
 						{
 							lost_tails.push( ghost_snake.body.back() );
 							ghost_snake.move( DOWN );
+						}
+					}
+					else if( go_left( current_position, maze ) and not(album[ photo.getPoseLeft() ] == photo.new_pose(LEFT) ) and previous_move != RIGHT )
+					{
+						previous_move = LEFT;
+					
+						album[ photo.getKey() ] = photo;
+						current_position.second--;
+
+						way.push( current_position );
+						food_way_directions.push_back( LEFT );
+						if( not ghost_snake.body.empty() )
+						{
+							lost_tails.push( ghost_snake.body.back() );
+							ghost_snake.move( LEFT );
 						}
 					}
 					else if( go_right( current_position, maze, right_limit ) and not(album[ photo.getPoseRight() ] == photo.new_pose(RIGHT) ) and previous_move != LEFT )
