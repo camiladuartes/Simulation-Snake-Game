@@ -47,7 +47,7 @@ namespace Snaze{
 				std::unordered_map<Snapshot::SnapshotKey,Snapshot,KeyHash, KeyEqual> album;
  
 				way.push( current_position );
-				int previous_move = NONE;
+				int previous_move = snake.current_direction();
 
 				while( not (way.empty()) )
 				{

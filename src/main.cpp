@@ -9,7 +9,6 @@ int main (int argc, char *argv[]){
     game.initialize_game();
     while( not game.game_over() )
     {
-
         game.update();
         game.render();
         std::this_thread::sleep_for(std::chrono::milliseconds( game.snake_speed() ));
