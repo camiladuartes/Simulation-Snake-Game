@@ -36,7 +36,7 @@ namespace Snaze{
                 std::cout << "\033[1;32m >>> Press <ENTER> to start the game! \033[0m\n";
                 std::cout << "\033[1;32m\n\n Lives: \033[0m";
                 for(int i = 0; i < snake.get_amount_lives(); i++)
-                    std::cout << "\033[1;32m"<< "♡ " << "\033[0m";
+                    std::cout << "\033[1;31m"<< "♡ " << "\033[0m";
                 std::cout << "\033[1;32m  |  Score:    \033[0m" << "\033[1;32m"<< score << "\033[0m";
                 std::cout << "\033[1;32m  |  Food eaten: \033[0m" << "\033[1;32m"<< 10 - level.get_amount_apples() << "\033[0m" << "\033[1;32m of 10\n\033[0m";
                 level.print_maze( snake );
@@ -54,7 +54,7 @@ namespace Snaze{
                 std::cout << "\033[1;32m >>> Press <ENTER> to start the game! \033[0m\n";
                 std::cout << "\033[1;32m\n\n Lives: \033[0m";
                 for(int i = 0; i < snake.get_amount_lives(); i++)
-                    std::cout << "\033[1;32m"<< "♡ " << "\033[0m";
+                    std::cout << "\033[1;31m"<< "♡ " << "\033[0m";
                 std::cout << "\033[1;32m  |  Score:    \033[0m" << "\033[1;32m"<< score << "\033[0m";
                 std::cout << "\033[1;32m  |  Food eaten: \033[0m" << "\033[1;32m"<< 10 - level.get_amount_apples() << "\033[0m" << "\033[1;32m of 10\n\033[0m";
                 level.print_maze( snake );
@@ -85,7 +85,7 @@ namespace Snaze{
                     std::cout << "\033[1;32m\n Score: \033[0m" << score << " + " << "\033[0m";   
                     for(int i = 0; i < snake.get_amount_lives(); i++)
                     {
-                        std::cout << "\033[1;32m"<< "♡" << "\033[0m";
+                        std::cout << "\033[1;31m"<< "♡" << "\033[0m";
                         score += 3000;
                     }
                     std::cout << "\033[1;32m"<< "x3000" << "\033[0m";
