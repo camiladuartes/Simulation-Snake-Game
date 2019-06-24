@@ -75,7 +75,7 @@ namespace Snaze{
              */
             bool game_over(){
                 if(snake.get_amount_lives() == 0){
-                    std::cout << "\033[1;32m\n GAME OVER \033[0m\n";
+                    std::cout << "\033[1;31m\n GAME OVER \033[0m\n";
                     std::cout << "\033[1;32m\n Score: \033[0m" << score << "\033[0m";
                     return true;
                 }
