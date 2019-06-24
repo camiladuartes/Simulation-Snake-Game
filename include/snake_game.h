@@ -62,7 +62,7 @@ namespace Snaze{
             //! If the player dies, a message is sent and the game is paused
             void you_die()
             {
-                std::cout << "\033[1;32m  >>> You die press enter to continue " << "\033[1;32m" << std::endl;
+                std::cout << "\033[1;32m  >>> YOU DIE!!! Press enter to continue " << "\033[1;32m" << std::endl;
                 std::getchar();
             }
 
