@@ -75,12 +75,21 @@ namespace Snaze{
              */
             bool game_over(){
                 if(snake.get_amount_lives() == 0){
-                    std::cout << " GAME OVER " << std::endl;
+                    std::cout << "\033[1;32m\n GAME OVER \033[0m\n";
+                    std::cout << "\033[1;32m\n Score: \033[0m" << score << "\033[0m";
                     return true;
                 }
                 if( victory )
                 {
-                    std::cout << " CONGRATULATIONS YOU WIN o/ " << std::endl;
+                    std::cout << "\033[1;32m\n CONGRATULATIONS YOU WIN \033[0m\n";
+                    std::cout << "\033[1;32m\n Score: \033[0m" << score << " + " << "\033[0m";   
+                    for(int i = 0; i < snake.get_amount_lives(); i++)
+                    {
+                        std::cout << "\033[1;32m"<< "♡" << "\033[0m";
+                        score += 3000;
+                    }
+                    std::cout << "\033[1;32m"<< "x3000" << "\033[0m";
+                    std::cout << "\033[1;32m = \033[0m" << score << "\033[0m" << std::endl;
                     return true;
                 }
                 return false;
