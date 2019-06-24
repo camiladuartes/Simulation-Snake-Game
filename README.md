@@ -1,4 +1,4 @@
-# Simulation-Snake-Game
+# Snake-Game-Simulation
 Simulation of the classic Snake arcade video game in C++
 
 ## Students:
