@@ -195,7 +195,7 @@ namespace Snaze{
             void next_level(){
                 current_level++;
                 amount_apples = 10;
-                std::cout << "\033[1;32m  |  Level complete press enter to continue " << "\033[1;32m" << std::endl;
+                std::cout << "\033[1;32m  >>> LEVEL COMPLETE!!! Press enter to continue " << "\033[1;32m" << std::endl;
                 getchar();
                 
             };
