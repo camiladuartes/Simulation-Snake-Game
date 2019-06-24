@@ -63,7 +63,7 @@ namespace Snaze{
             //! If the player dies, a message is sent and the game is paused
             void you_die()
             {
-                std::cout << "\033[1;32m  |  you die press enter to continue " << "\033[1;32m" << std::endl;
+                std::cout << "\033[1;32m  |  You die press enter to continue " << "\033[1;32m" << std::endl;
                 std::getchar();
             }
 
@@ -75,13 +75,13 @@ namespace Snaze{
              */
             bool game_over(){
                 if(snake.get_amount_lives() == 0){
-                    std::cout << "\033[1;31m\n GAME OVER \033[0m\n";
+                    std::cout << "\033[1;31m\n GAME OVER!!! \033[0m\n";
                     std::cout << "\033[1;32m\n Score: \033[0m" << score << "\033[0m";
                     return true;
                 }
                 if( victory )
                 {
-                    std::cout << "\033[1;32m\n CONGRATULATIONS YOU WIN \033[0m\n";
+                    std::cout << "\033[1;32m\n CONGRATULATIONS: YOU WIN!!! \033[0m\n";
                     std::cout << "\033[1;32m\n Score: \033[0m" << score << " + " << "\033[0m";   
                     for(int i = 0; i < snake.get_amount_lives(); i++)
                     {
