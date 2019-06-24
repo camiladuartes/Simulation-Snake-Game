@@ -51,7 +51,6 @@ namespace Snaze{
                 std::cout << "\033[1;32m  |  Snake lives: \033[0m" << "\033[1;32m"<< snake.get_amount_lives() << "\033[0m";
                 std::cout << "\033[1;32m  |  Apples to eat: \033[0m" << "\033[1;32m"<< level.get_amount_apples() << "\033[0m";
                 std::cout << "\033[1;32m\n ----------------------------------------------------------- \033[0m\n";
-                std::cout << "\033[1;32m >>> Press <ENTER> to start the game! \033[0m\n";
                 std::cout << "\033[1;32m\n\n Lives: \033[0m";
                 for(int i = 0; i < snake.get_amount_lives(); i++)
                     std::cout << "\033[1;31m"<< "♡ " << "\033[0m";
