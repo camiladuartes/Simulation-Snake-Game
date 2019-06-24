@@ -13,6 +13,7 @@ namespace Snaze{
             Player AI;
             bool victory;
         public:
+            //! Constructor.
             SnakeGame( Input input )
             {
                 victory = false;
@@ -24,6 +25,7 @@ namespace Snaze{
                 AI.find_solution( level.get_characters(), level.get_apple_location(),  level.get_maze_dimensions()[level.get_current_level()].first-1, level.get_maze_dimensions()[level.get_current_level()].second-1, snake.get_head(), snake );
             }
 
+            //! Prints a welcome message and prepare the player to game.
             void initialize_game(){
                 std::cout << "\033[1;32m        ---> Welcome to the classic Snake Game <--- \033[0m\n";
                 std::cout << "\033[1;32m ----------------------------------------------------------- \033[0m\n";
@@ -40,6 +42,7 @@ namespace Snaze{
                 level.print_maze( snake );
                 std::getchar(); // For when the enter is pressed the game begins
             }
+            //! Render the current stage of the game.
             void render()
             {
                 std::cout << "\033[1;32m        ---> Welcome to the classic Snake Game <--- \033[0m\n";
@@ -57,7 +60,7 @@ namespace Snaze{
                 level.print_maze( snake );
             }
 
-            //!
+            //! If the player dies, a message is sent and the game is paused
             void you_die()
             {
                 std::cout << "\033[1;32m  |  you die press enter to continue " << "\033[1;32m" << std::endl;
@@ -83,7 +86,7 @@ namespace Snaze{
                 return false;
             }
 
-            //!
+            //! Verify and updates the game elements.
             void update()
             {   
                 score += 3*snake.body.size() + 3;
@@ -119,7 +122,7 @@ namespace Snaze{
                 }
                 snake.move( AI.next_move( snake.current_direction() ) );
             }
-            
+            //! Increases the speed of how the game is shown based on the size of the snake. 
             int snake_speed()
             {
                 if( snake.body.size() < 2 )

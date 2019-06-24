@@ -1,6 +1,6 @@
 #ifndef SNAPSHOT_H
 #define SNAPSHOT_H
-
+/* structs e functors usados para a tabela hash usada na busca em profundidade do caminho da cobra até a comida, e uma enumeração para as direções.*/
 #include <tuple>
 #include <functional>
 

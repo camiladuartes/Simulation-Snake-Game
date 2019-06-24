@@ -77,7 +77,7 @@ namespace Snaze{
                 read_file.close();
             }
 
-            //!
+            //! Generate a random position to apple.
             void update_apple_location(){
                 //
                  while(true){
@@ -200,12 +200,13 @@ namespace Snaze{
                 
             };
             
-
+            //! Indicates the spawn/respawn position of snake
             std::pair<int,int> spawn_pos()
             {
                 return snake_spawn[current_level];
             }
 
+            //! receive a coordinate pos and one snake, and returns true if the pos is a wall or a snake body in the maze, false otherwise. 
             bool wall( std::pair<int,int> pos, Snake snake )
             {
                 if( mazes_vector[current_level][pos.first][pos.second] == '#' or mazes_vector[current_level][pos.first][pos.second] == '.' )

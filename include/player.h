@@ -12,8 +12,8 @@ namespace Snaze{
     //! Represents the AI engine
     class Player{
     	private:
-    		std::deque<Directions> food_way_directions;
-    		Snake ghost_snake;
+    		std::deque<Directions> food_way_directions; //!< The sequence of moves for the player reach the objective( eat apples ). 
+    		Snake ghost_snake; //<! Use for simulate the snake moves in find_solution and auxiliaries methods for verify free paths.
 
     	public:
 
